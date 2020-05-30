@@ -1,0 +1,73 @@
+import { axios } from '@/utils/request'
+
+const api = {
+  user: '/api/User/Query',
+  role: '/api/role/list/',
+  permission: '/api/menu/resource',
+  addMenu: '/api/menu/Add',
+  modifyMenu: '/api/menu/Modify',
+  addRole: '/api/role/Add',
+  modifyRole: '/api/role/Modify',
+  authRole: '/api/role/Auth'
+}
+
+export function getRoleList () {
+  return axios({
+    url: api.role,
+    method: 'get'
+  })
+}
+
+export function permissionList () {
+  return axios({
+    url: api.permission,
+    method: 'post'
+  })
+}
+
+export function addMenu (parameter) {
+  return axios({
+    url: api.addMenu,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function modifyMenu (parameter) {
+  return axios({
+    url: api.modifyMenu,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function addRole (parameter) {
+  return axios({
+    url: api.addRole,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function modifyRole (parameter) {
+  return axios({
+    url: api.modifyRole,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function authRole (parameter) {
+  return axios({
+    url: api.authRole,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function getUserList () {
+  return axios({
+    url: api.user,
+    method: 'get'
+  })
+}
